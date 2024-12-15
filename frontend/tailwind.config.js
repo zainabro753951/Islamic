@@ -8,7 +8,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        themeFont: ["Cinzel Decorative"],
+        themeHeading: ["Cinzel Decorative"],
+        themeText: ["Epilogue", "sans-serif"],
       },
       colors: {
         themeGreen: "#004B39",

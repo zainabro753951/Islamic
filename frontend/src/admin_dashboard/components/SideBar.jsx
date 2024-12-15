@@ -10,10 +10,9 @@ const SideBar = () => {
       [dropdownId]: !prevState[dropdownId],
     }));
   };
-  console.log(dropDowns["dropdown-1"]);
 
   return (
-    <div className="w-[25%] h-full bg-themeGreen text-white flex flex-col gap-3">
+    <div className="w-[25%] h- pb-10 bg-themeGreen text-white flex flex-col gap-3">
       <div className="w-full relative flex flex-col items-center justify-center">
         <svg
           className="fill-themeYellow rotate-180 w-full h-[250px]"
@@ -33,12 +32,12 @@ const SideBar = () => {
           </g>
         </svg>
         <img className="absolute top-1" src="/imgs/logo2.png" alt="" />
-        <h1 className="text-2xl font-semibold -translate-y-10 text-white scale-y-125">
+        <h1 className="text-2xl font-semibold font-themeHeading -translate-y-10 text-white scale-y-125">
           Admin Dashboard
         </h1>
       </div>
-      <div className="w-full h-full flex flex-col gap-1">
-        <div className="flex py-4 px-5 items-center justify-between transition-all duration-200 hover:bg-white/35 cursor-pointer">
+      <div className="w-full h-full flex flex-col">
+        <div className="flex py-4 border-t border-gray-400 font-themeHeading px-5 items-center justify-between transition-all duration-200 hover:bg-white/35 cursor-pointer">
           <span className=" flex items-center gap-3">
             <FaUsers className="text-xl" />
             <span>Users</span>
@@ -50,8 +49,8 @@ const SideBar = () => {
         >
           <div className="flex items-center py-4 px-5 justify-between transition-all duration-200 hover:bg-white/35 cursor-pointer">
             <span className=" flex items-center gap-3">
-              <BiSolidBookContent className="text-xl" />
-              <span>Content Management</span>
+              <img src="/imgs/Sorat.png" className="w-6" />
+              <span className="font-themeHeading">Add Surah</span>
             </span>
             <span
               className={`${
@@ -67,19 +66,136 @@ const SideBar = () => {
               dropDowns["dropdown-1"] ? "max-h-svh" : "max-h-0"
             } transition-all duration-700 ease`}
           >
-            <div className="flex items-center px-5 py-4 justify-between transition-all duration-200 hover:bg-white/35 cursor-pointer">
+            <div className="flex items-center pl-10 py-4 justify-between transition-all duration-200 hover:bg-white/35 cursor-pointer">
               <span className=" flex items-center gap-3">
                 <BiSolidBookContent className="text-xl" />
-                <span>Add Surah</span>
+                <span className="font-themeText">Add Surah</span>
               </span>
             </div>
-            <div className="flex items-center px-5 py-4 justify-between transition-all duration-200 hover:bg-white/35 cursor-pointer">
+            <div className="flex items-center pl-10 py-4 justify-between transition-all duration-200 hover:bg-white/35 cursor-pointer">
               <span className=" flex items-center gap-3">
                 <BiSolidBookContent className="text-xl" />
-                <span>Add Hadis</span>
+                <span className="font-themeText">View Surah</span>
               </span>
             </div>
           </div>
+        </div>
+        <div
+          onClick={() => toggleDropdown("dropdown-2")}
+          className="flex flex-col border-y border-gray-400 "
+        >
+          <div className="flex items-center py-4 px-5 justify-between transition-all duration-200 hover:bg-white/35 cursor-pointer">
+            <span className=" flex items-center gap-3">
+              <BiSolidBookContent className="text-xl" />
+              <span className="font-themeHeading">Add Hadis</span>
+            </span>
+            <span
+              className={`${
+                dropDowns["dropdown-2"] ? "-rotate-90" : "rotate-0"
+              } transition-all duration-700`}
+            >
+              <IoMdArrowDropdown />
+            </span>
+          </div>
+          <div
+            id="dropdown-2"
+            className={`bg-[#055c1a] overflow-hidden ${
+              dropDowns["dropdown-2"] ? "max-h-svh" : "max-h-0"
+            } transition-all duration-700 ease`}
+          >
+            <div className="flex items-center pl-10 py-4 justify-between transition-all duration-200 hover:bg-white/35 cursor-pointer">
+              <span className=" flex items-center gap-3">
+                <BiSolidBookContent className="text-xl" />
+                <span className="font-themeText">Add Hadis</span>
+              </span>
+            </div>
+            <div className="flex items-center pl-10 py-4 justify-between transition-all duration-200 hover:bg-white/35 cursor-pointer">
+              <span className=" flex items-center gap-3">
+                <BiSolidBookContent className="text-xl" />
+                <span className="font-themeText">View Hadis</span>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
+          onClick={() => toggleDropdown("dropdown-4")}
+          className="flex flex-col border-y border-gray-400 "
+        >
+          <div className="flex items-center py-4 px-5 justify-between transition-all duration-200 hover:bg-white/35 cursor-pointer">
+            <span className=" flex items-center gap-3">
+              <BiSolidBookContent className="text-xl" />
+              <span className="font-themeHeading">Add Books</span>
+            </span>
+            <span
+              className={`${
+                dropDowns["dropdown-4"] ? "-rotate-90" : "rotate-0"
+              } transition-all duration-700`}
+            >
+              <IoMdArrowDropdown />
+            </span>
+          </div>
+          <div
+            id="dropdown-4"
+            className={`bg-[#055c1a] overflow-hidden ${
+              dropDowns["dropdown-4"] ? "max-h-svh" : "max-h-0"
+            } transition-all duration-700 ease`}
+          >
+            <div className="flex items-center pl-10 py-4 justify-between transition-all duration-200 hover:bg-white/35 cursor-pointer">
+              <span className=" flex items-center gap-3">
+                <BiSolidBookContent className="text-xl" />
+                <span className="font-themeText">Add Books</span>
+              </span>
+            </div>
+            <div className="flex items-center pl-10 py-4 justify-between transition-all duration-200 hover:bg-white/35 cursor-pointer">
+              <span className=" flex items-center gap-3">
+                <BiSolidBookContent className="text-xl" />
+                <span className="font-themeText">View Books</span>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
+          onClick={() => toggleDropdown("dropdown-3")}
+          className="flex flex-col border-y border-gray-400 "
+        >
+          <div className="flex items-center py-4 px-5 justify-between transition-all duration-200 hover:bg-white/35 cursor-pointer">
+            <span className=" flex items-center gap-3">
+              <BiSolidBookContent className="text-xl" />
+              <span className="font-themeHeading">Add Lectures</span>
+            </span>
+            <span
+              className={`${
+                dropDowns["dropdown-3"] ? "-rotate-90" : "rotate-0"
+              } transition-all duration-700`}
+            >
+              <IoMdArrowDropdown />
+            </span>
+          </div>
+          <div
+            id="dropdown-3"
+            className={`bg-[#055c1a] overflow-hidden ${
+              dropDowns["dropdown-3"] ? "max-h-svh" : "max-h-0"
+            } transition-all duration-700 ease`}
+          >
+            <div className="flex items-center pl-10 py-4 justify-between transition-all duration-200 hover:bg-white/35 cursor-pointer">
+              <span className=" flex items-center gap-3">
+                <BiSolidBookContent className="text-xl" />
+                <span className="font-themeText">Add Lectures</span>
+              </span>
+            </div>
+            <div className="flex items-center pl-10 py-4 justify-between transition-all duration-200 hover:bg-white/35 cursor-pointer">
+              <span className=" flex items-center gap-3">
+                <BiSolidBookContent className="text-xl" />
+                <span className="font-themeText">View Lectures</span>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div className="flex py-4 border-b border-gray-400 font-themeHeading px-5 items-center justify-between transition-all duration-200 hover:bg-white/35 cursor-pointer">
+          <span className=" flex items-center gap-3">
+            <FaUsers className="text-xl" />
+            <span>Set Prayers Time</span>
+          </span>
         </div>
       </div>
     </div>

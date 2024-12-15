@@ -1,7 +1,10 @@
 import express, { urlencoded } from "express";
+import cors from "cors";
 const app = express();
 import dotenv from "dotenv";
 import mongoose from "mongoose";
+import admin from "./Routes/admin/admin.route.js";
+import cookieParser, { signedCookie } from "cookie-parser";
 dotenv.config();
 
 // mongodb connection
@@ -17,12 +20,11 @@ let port = process.env.PORT || 8080;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cors({ origin: "http://localhost:2006/", credentials: true }));
+app.use(cookieParser());
 
 // Middleware to log request details
-app.get("/", (req, res) => {
-  console.log("GET request received at:", new Date());
-  res.send("GET request received");
-});
+app.use("/api/admin", admin);
 
 app.listen(port, () =>
   console.log(`listening on port http://localhost:${port}`)
